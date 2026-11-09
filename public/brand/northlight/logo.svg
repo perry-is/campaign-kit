@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#19c3b1"/>
+      <stop offset="0.55" stop-color="#7b6cf6"/>
+      <stop offset="1" stop-color="#ff5d8f"/>
+    </linearGradient>
+    <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2a66"/>
+      <stop offset="1" stop-color="#241640"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="600" height="600" fill="#1a0b2e"/>
+  <!-- aurora arcs -->
+  <g fill="none" stroke="url(#aurora)" stroke-linecap="round" filter="url(#glow)">
+    <path d="M110 300 Q300 70 490 300" stroke-width="18"/>
+    <path d="M150 300 Q300 130 450 300" stroke-width="12" opacity="0.8"/>
+    <path d="M190 300 Q300 185 410 300" stroke-width="8" opacity="0.6"/>
+  </g>
+  <!-- mountain -->
+  <path d="M120 360 L250 210 L305 270 L350 225 L480 360 Z" fill="url(#peak)" stroke="#19c3b1" stroke-width="3"/>
+  <!-- network nodes -->
+  <g fill="#ffd166" filter="url(#glow)">
+    <circle cx="250" cy="210" r="9"/>
+    <circle cx="350" cy="225" r="9"/>
+    <circle cx="300" cy="118" r="7"/>
+  </g>
+  <g stroke="#ffd166" stroke-width="2" opacity="0.7">
+    <line x1="250" y1="210" x2="300" y2="118"/>
+    <line x1="300" y1="118" x2="350" y2="225"/>
+  </g>
+  <!-- wordmark -->
+  <text x="300" y="452" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="64" letter-spacing="6" fill="#f3eefc">NORTHLIGHT</text>
+  <text x="300" y="506" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="34" letter-spacing="14" fill="#ff5d8f">EVENTS</text>
+</svg>

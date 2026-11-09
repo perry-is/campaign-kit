@@ -1,0 +1,15 @@
+# Dependabot: security fixes arrive as soon as they're published (repo setting).
+# Routine library updates are bundled into one pull request a month to keep noise low.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    groups:
+      fonts:
+        patterns: ["@fontsource/*"]
+      app-libraries:
+        patterns: ["*"]
+        exclude-patterns: ["@fontsource/*"]

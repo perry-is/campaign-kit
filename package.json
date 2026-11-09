@@ -1,0 +1,45 @@
+{
+  "name": "campaign-kit",
+  "productName": "CampaignKit",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite --host localhost --port 5317 --strictPort",
+    "build": "tsc -b && vite build",
+    "app": "npm run build && electron .",
+    "app:dev": "CK_DEV_URL=http://localhost:5317 electron .",
+    "test": "vitest run",
+    "typecheck": "tsc -b",
+    "package": "npm run build && electron-packager . \"CampaignKit\" --platform=darwin --arch=arm64 --icon=build/icon.icns --out=release --overwrite --app-bundle-id=com.campaignkit.app --app-category-type=public.app-category.business --ignore='^/(src|public|build|release|showcase|docs|node_modules|\\.claude|README\\.md|tsconfig\\.json|vite\\.config\\.ts|index\\.html|tsconfig\\.tsbuildinfo|\\.gitignore)($|/)' --ignore='\\.test\\.ts$'"
+  },
+  "dependencies": {
+    "@fontsource/archivo-black": "5.3.0",
+    "@fontsource/bebas-neue": "5.3.0",
+    "@fontsource/krona-one": "5.3.0",
+    "@fontsource/lora": "5.3.0",
+    "@fontsource/michroma": "5.3.0",
+    "@fontsource/montserrat": "5.3.0",
+    "@fontsource/orbitron": "5.3.0",
+    "@fontsource/oswald": "5.3.0",
+    "@fontsource/pacifico": "5.3.0",
+    "@fontsource/playfair-display": "5.3.0",
+    "@fontsource/poppins": "5.3.0",
+    "@fontsource/raleway": "5.3.0",
+    "@fontsource/unbounded": "5.3.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "@types/node": "24.12.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.1.2",
+    "electron": "45.2.3",
+    "typescript": "5.9.3",
+    "vite": "8.3.6",
+    "vitest": "5.0.3"
+  }
+}
